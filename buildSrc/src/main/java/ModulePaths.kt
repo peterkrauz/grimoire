@@ -3,10 +3,8 @@ object ModulePaths {
     const val data = ":data"
     const val domain = ":domain"
 
-    object Presentation {
-        private const val packageName = ":presentation"
-        const val home = "$packageName:home"
-        const val notes = "$packageName:notes"
-        const val characters = "$packageName:characters"
-    }
+    private const val presentationPrefix = ":presentation"
+    const val home = "$presentationPrefix:home"
+    const val notes = "$presentationPrefix:notes"
+    const val characters = "$presentationPrefix:characters"
 }
