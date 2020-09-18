@@ -2,6 +2,10 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'androidx.navigation.safeargs.kotlin'
+
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.appdistribution'
 }
 
 android {
@@ -23,6 +27,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            firebaseAppDistribution {
+                releaseNotesFile="releasenotes.txt"
+                testers="krausepeterm@gmail.com"
+            }
+        }
     }
 
     compileOptions {
@@ -41,7 +51,8 @@ dependencies {
     implementation Navigation.navigationUi
     implementation Navigation.navigationFragment
 
-//    implementation project(path: ':common')
+    implementation Firebase.analytics
+
     implementation project(ModulePaths.common)
     implementation project(ModulePaths.home)
     implementation project(ModulePaths.notes)
