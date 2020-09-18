@@ -1,4 +1,4 @@
-package com.peterkrauz.presentation.home
+package com.peterkrauz.grimoire.presentation.home
 
 import org.junit.Test
 
