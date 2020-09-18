@@ -38,9 +38,10 @@ dependencies {
     implementation Android.appCompat
     implementation Android.constraintLayout
     implementation Material.material
-    implementation Navigation.navigation
+    implementation Navigation.navigationUi
     implementation Navigation.navigationFragment
 
+//    implementation project(path: ':common')
     implementation project(ModulePaths.common)
     implementation project(ModulePaths.home)
     implementation project(ModulePaths.notes)

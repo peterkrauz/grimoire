@@ -30,5 +30,5 @@ object Material {
 object Navigation {
     private const val version = "2.3.0"
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:$version"
-    const val navigation = "androidx.navigation:navigation-ui-ktx:$version"
+    const val navigationUi = "androidx.navigation:navigation-ui-ktx:$version"
 }
