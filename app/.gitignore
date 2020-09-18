@@ -1,0 +1,5 @@
+/build
+.idea
+/buildSrc/build/
+/buildSrc/build/*
+*.jar
