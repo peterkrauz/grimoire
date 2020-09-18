@@ -1,3 +1,5 @@
+import org.gradle.api.JavaVersion
+
 object AndroidConfig {
 
     const val compileSdkVersion = 30
@@ -8,4 +10,5 @@ object AndroidConfig {
     const val versionCode = 1
     const val versionName = "0.0.1"
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    val javaVersion = JavaVersion.VERSION_1_8
 }
