@@ -1,4 +1,4 @@
-:crystal_ball: :open_book: # Grimoire
+# Grimoire :crystal_ball: :open_book:
 ---
 ## What is this
 
