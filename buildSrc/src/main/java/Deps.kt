@@ -43,3 +43,11 @@ object Firebase {
 
     const val analytics = "com.google.firebase:firebase-analytics:${Versions.analytics}"
 }
+
+object Room {
+    private const val version = "2.5.0"
+
+    const val ktx = "androidx.room:room-ktx:$version"
+    const val runtime = "androidx.room:room-runtime:$version"
+    const val compiler = "androidx.room:room-compiler:$version"
+}

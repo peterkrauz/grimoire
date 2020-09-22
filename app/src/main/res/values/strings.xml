@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">Grimoire</string>
-
     <string name="arcs">Arcs</string>
     <string name="characters">Characters</string>
     <string name="notes">Notes</string>

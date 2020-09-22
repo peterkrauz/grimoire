@@ -34,6 +34,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:471809376764:android:924a832c114f8689903279",
+        "android_client_info": {
+          "package_name": "com.peterkrauz.grimoire.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "471809376764-r4fhgao995chl26pou0kb3feo3a8ed0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtJzE-Oo1EIgmqZRCbgmig08_I1CvNse8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "471809376764-r4fhgao995chl26pou0kb3feo3a8ed0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

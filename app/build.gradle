@@ -26,8 +26,17 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "app_name", "Grimoire"
+            firebaseAppDistribution {
+                releaseNotesFile="releasenotes.txt"
+                testers="krausepeterm@gmail.com"
+            }
         }
-        debug {
+        beta {
+            initWith debug
+            applicationIdSuffix ".beta"
+            versionNameSuffix "-beta"
+            resValue "string", "app_name", "Grimoire Beta"
             firebaseAppDistribution {
                 releaseNotesFile="releasenotes.txt"
                 testers="krausepeterm@gmail.com"
@@ -38,6 +47,9 @@ android {
     compileOptions {
         sourceCompatibility = AndroidConfig.javaVersion
         targetCompatibility = AndroidConfig.javaVersion
+    }
+    kotlinOptions {
+        jvmTarget = AndroidConfig.jvmTarget
     }
 }
 
