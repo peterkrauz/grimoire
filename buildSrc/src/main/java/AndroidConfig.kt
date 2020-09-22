@@ -11,6 +11,9 @@ object AndroidConfig {
     const val versionName = "0.0.1"
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     const val consumerProguardFile = "consumer-rules.pro"
+
+    const val firebaseAppTestersGroupAlias = "the-boyz"
+
     val javaVersion = JavaVersion.VERSION_1_8
     const val jvmTarget = "1.8"
 }

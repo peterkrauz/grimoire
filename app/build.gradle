@@ -2,11 +2,14 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
 
     id 'com.google.gms.google-services'
     id 'com.google.firebase.appdistribution'
 }
+
+def testerGroupAlias = System.getenv("TESTER_GROUP_ALIAS")
 
 android {
     compileSdkVersion AndroidConfig.compileSdkVersion
@@ -18,8 +21,14 @@ android {
         targetSdkVersion AndroidConfig.targetSdkVersion
         versionCode AndroidConfig.versionCode
         versionName AndroidConfig.versionName
-
         testInstrumentationRunner AndroidConfig.testInstrumentationRunner
+        ext.betaDistributionGroupAliases = testerGroupAlias
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
     }
 
     buildTypes {
@@ -29,7 +38,6 @@ android {
             resValue "string", "app_name", "Grimoire"
             firebaseAppDistribution {
                 releaseNotesFile="releasenotes.txt"
-                testers="krausepeterm@gmail.com"
             }
         }
         beta {
@@ -39,7 +47,7 @@ android {
             resValue "string", "app_name", "Grimoire Beta"
             firebaseAppDistribution {
                 releaseNotesFile="releasenotes.txt"
-                testers="krausepeterm@gmail.com"
+                groups=testerGroupAlias
             }
         }
     }
