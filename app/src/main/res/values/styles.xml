@@ -18,4 +18,8 @@
         <item name="contentInsetRight">0dp</item>
         <item name="contentInsetEnd">0dp</item>
     </style>
+
+    <style name="TextAppearance.Grimoire.Bold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/kumbh_sans_bold</item>
+    </style>
 </resources>
