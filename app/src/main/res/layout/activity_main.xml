@@ -25,8 +25,8 @@
         android:background="#fff"
         app:menu="@menu/bottom_nav_menu"
         app:elevation="16dp"
-        app:itemIconTint="@drawable/bottom_nav_item"
-        app:itemTextColor="@drawable/bottom_nav_item"
+        app:itemIconTint="@drawable/selector_bottom_nav_item"
+        app:itemTextColor="@drawable/selector_bottom_nav_item"
         app:itemTextAppearanceActive="@style/TextAppearance.Grimoire.Bold"
         app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent" />
