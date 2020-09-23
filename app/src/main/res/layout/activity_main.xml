@@ -27,7 +27,7 @@
         app:elevation="16dp"
         app:itemIconTint="@drawable/selector_bottom_nav_item"
         app:itemTextColor="@drawable/selector_bottom_nav_item"
-        app:itemTextAppearanceActive="@style/TextAppearance.Grimoire.Bold"
+        app:itemTextAppearanceActive="@style/TextAppearance.Grimoire.BottomNavItem.Bold"
         app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent" />
 

@@ -19,7 +19,13 @@
         <item name="contentInsetEnd">0dp</item>
     </style>
 
-    <style name="TextAppearance.Grimoire.Bold" parent="TextAppearance.AppCompat">
+    <style name="TextAppearance.Grimoire.BottomNavItem.Bold" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/kumbh_sans_bold</item>
+    </style>
+
+    <style name="TextAppearance.Grimoire.H2" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/kumbh_sans_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/grey82</item>
     </style>
 </resources>

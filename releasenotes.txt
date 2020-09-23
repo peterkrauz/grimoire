@@ -1,5 +1,1 @@
-Version: 0.0.1
-
-Features:
-- Home screen
-- App icon
+Version: 0.0.2

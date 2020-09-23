@@ -10,6 +10,9 @@ plugins {
     id 'com.google.firebase.appdistribution'
 }
 
+def firebaseBetaGroups = System.getenv("FIREBASE_TESTERS")
+def firebaseBetaTesters = System.getenv("TESTER_GROUP_ALIAS")
+
 android {
     compileSdkVersion AndroidConfig.compileSdkVersion
     buildToolsVersion AndroidConfig.buildToolsVersion
@@ -21,7 +24,7 @@ android {
         versionCode AndroidConfig.versionCode
         versionName AndroidConfig.versionName
         testInstrumentationRunner AndroidConfig.testInstrumentationRunner
-        ext.betaDistributionGroupAliases = AndroidConfig.firebaseAppTestersGroupAlias
+        ext.betaDistributionGroupAliases = firebaseBetaGroups
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -46,7 +49,8 @@ android {
             resValue "string", "app_name", "Grimoire Beta"
             firebaseAppDistribution {
                 releaseNotesFile="releasenotes.txt"
-                groups=AndroidConfig.firebaseAppTestersGroupAlias
+                testers=firebaseBetaTesters
+                groups=firebaseBetaGroups
             }
         }
     }
