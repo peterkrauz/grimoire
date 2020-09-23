@@ -10,11 +10,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_bias="0.35"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" >
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:layout_width="190dp"
@@ -27,8 +27,22 @@
             android:text="@string/characters_empty_state_msg"
             android:textAppearance="@style/TextAppearance.Grimoire.H2"
             android:gravity="center"
-            android:layout_marginTop="64dp"/>
+            android:layout_marginTop="64dp" />
 
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:src="@drawable/ic_add"
+        android:tint="@color/colorBackground"
+        android:clickable="true"
+        android:focusable="true"
+        app:fabSize="normal"
+        app:rippleColor="@color/colorBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

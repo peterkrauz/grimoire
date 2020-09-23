@@ -41,4 +41,6 @@ dependencies {
     implementation Kotlin.standardLibrary
     implementation Navigation.navigationUi
     implementation Navigation.navigationFragment
+
+    api Material.material
 }

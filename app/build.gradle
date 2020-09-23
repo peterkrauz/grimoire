@@ -77,6 +77,7 @@ dependencies {
     implementation Navigation.navigationUi
     implementation Navigation.navigationFragment
     implementation Firebase.analytics
+    implementation Android.lifeCycleExtensions
 
     implementation Hilt.android
     implementation Hilt.viewModel

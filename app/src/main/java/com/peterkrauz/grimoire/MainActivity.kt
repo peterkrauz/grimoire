@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupView() {
         bottomNavigationView.run {
-//            setOnNavigationItemReselectedListener { Unit }
+            setOnNavigationItemReselectedListener { Unit }
             setupWithNavController(mainNavFragment.findNavController())
         }
     }

@@ -5,14 +5,16 @@ object Kotlin {
 
 object Android {
     private object Versions {
-        const val coreKtxVersion = "1.3.1"
-        const val appCompatVersion = "1.2.0"
-        const val constraintLayoutVersion = "2.0.1"
+        const val coreKtx = "1.3.1"
+        const val appCompat = "1.2.0"
+        const val constraintLayout = "2.0.1"
+        const val lifecycle = "2.2.0"
     }
 
-    const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtxVersion}"
-    const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompatVersion}"
-    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayoutVersion}"
+    const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+    const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    const val lifeCycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
 }
 
 object Jetpack {

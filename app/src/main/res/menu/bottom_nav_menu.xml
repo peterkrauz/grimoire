@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/arcsFragment"
         android:title="@string/arcs"
         android:icon="@drawable/ic_arcs_menu" />
 

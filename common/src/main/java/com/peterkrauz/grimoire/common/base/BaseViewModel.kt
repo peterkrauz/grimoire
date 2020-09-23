@@ -1,4 +1,4 @@
-package com.peterkrauz.grimoire.common
+package com.peterkrauz.grimoire.common.base
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
