@@ -9,8 +9,6 @@ plugins {
     id 'com.google.firebase.appdistribution'
 }
 
-def testerGroupAlias = System.getenv("TESTER_GROUP_ALIAS")
-
 android {
     compileSdkVersion AndroidConfig.compileSdkVersion
     buildToolsVersion AndroidConfig.buildToolsVersion
@@ -22,7 +20,7 @@ android {
         versionCode AndroidConfig.versionCode
         versionName AndroidConfig.versionName
         testInstrumentationRunner AndroidConfig.testInstrumentationRunner
-        ext.betaDistributionGroupAliases = testerGroupAlias
+        ext.betaDistributionGroupAliases = AndroidConfig.firebaseAppTestersGroupAlias
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -47,7 +45,7 @@ android {
             resValue "string", "app_name", "Grimoire Beta"
             firebaseAppDistribution {
                 releaseNotesFile="releasenotes.txt"
-                groups=testerGroupAlias
+                groups=AndroidConfig.firebaseAppTestersGroupAlias
             }
         }
     }
