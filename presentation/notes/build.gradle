@@ -41,4 +41,8 @@ dependencies {
     implementation Kotlin.standardLibrary
     implementation Android.coreKtx
     implementation Android.constraintLayout
+    implementation Hilt.android
+    implementation Hilt.viewModel
+    kapt Hilt.compiler
+    kapt Hilt.androidXCompiler
 }

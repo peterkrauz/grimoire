@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
 
     id 'com.google.gms.google-services'
     id 'com.google.firebase.appdistribution'
@@ -24,7 +25,7 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
             }
         }
     }
@@ -59,8 +60,11 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes true
+}
+
 dependencies {
-//    implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation Kotlin.standardLibrary
     implementation Android.coreKtx
     implementation Android.appCompat
@@ -68,8 +72,12 @@ dependencies {
     implementation Material.material
     implementation Navigation.navigationUi
     implementation Navigation.navigationFragment
-
     implementation Firebase.analytics
+
+    implementation Hilt.android
+    implementation Hilt.viewModel
+    kapt Hilt.compiler
+    kapt Hilt.androidXCompiler
 
     implementation project(ModulePaths.common)
     implementation project(ModulePaths.home)

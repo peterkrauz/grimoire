@@ -15,6 +15,10 @@ object Android {
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayoutVersion}"
 }
 
+object Jetpack {
+
+}
+
 object JUnit {
     private object Versions {
         const val jUnitVersion = "4.12"
@@ -50,4 +54,16 @@ object Room {
     const val ktx = "androidx.room:room-ktx:$version"
     const val runtime = "androidx.room:room-runtime:$version"
     const val compiler = "androidx.room:room-compiler:$version"
+}
+
+object Hilt {
+    private object Versions {
+        const val hilt = "2.28-alpha"
+        const val hiltExtensions = "1.0.0-alpha01"
+    }
+
+    const val android = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    const val viewModel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltExtensions}"
+    const val androidXCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltExtensions}"
 }
