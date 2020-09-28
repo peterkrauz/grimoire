@@ -9,11 +9,16 @@
     <item
         android:id="@+id/charactersFragment"
         android:title="@string/characters"
-        android:icon="@drawable/ic_characters_menu" />
+        android:icon="@drawable/selector_characters_menu" />
 
     <item
         android:id="@+id/notesFragment"
         android:title="@string/notes"
-        android:icon="@drawable/ic_notes_menu" />
+        android:icon="@drawable/selector_notes_menu" />
+
+    <item
+        android:id="@+id/tagsFragment"
+        android:title="@string/tags"
+        android:icon="@drawable/selector_tags_menu" />
 
 </menu>

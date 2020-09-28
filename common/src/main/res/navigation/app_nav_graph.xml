@@ -16,4 +16,8 @@
         android:id="@+id/notesFragment"
         android:name="com.peterkrauz.grimoire.presentation.notes.NotesFragment" />
 
+    <fragment
+        android:id="@+id/tagsFragment"
+        android:name="com.peterkrauz.grimoire.presentation.tags.TagsFragment" />
+
 </navigation>
