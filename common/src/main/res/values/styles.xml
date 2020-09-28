@@ -1,5 +1,9 @@
 <resources>
 
+    <style name="Theme.Grimoire.Launcher">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+    
     <style name="Theme.Grimoire" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="actionBarStyle">@style/Theme.Grimoire.ActionBar</item>
         <item name="android:windowBackground">@color/colorBackground</item>
