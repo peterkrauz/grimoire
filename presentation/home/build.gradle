@@ -6,42 +6,13 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
-android {
-    compileSdkVersion AndroidConfig.compileSdkVersion
-    buildToolsVersion AndroidConfig.buildToolsVersion
-
-    defaultConfig {
-        minSdkVersion AndroidConfig.minSdkVersion
-        targetSdkVersion AndroidConfig.targetSdkVersion
-        versionCode AndroidConfig.versionCode
-        versionName AndroidConfig.versionName
-
-        testInstrumentationRunner AndroidConfig.testInstrumentationRunner
-        consumerProguardFiles AndroidConfig.consumerProguardFile
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-        beta {
-            initWith debug
-        }
-    }
-    compileOptions {
-        sourceCompatibility = AndroidConfig.javaVersion
-        targetCompatibility = AndroidConfig.javaVersion
-    }
-    kotlinOptions {
-        jvmTarget = AndroidConfig.jvmTarget
-    }
-}
+apply from: "$rootProject.projectDir/feature-config.gradle"
 
 dependencies {
     implementation Kotlin.standardLibrary
     implementation Android.coreKtx
     implementation Android.constraintLayout
+    implementation Navigation.navigationFragment
     implementation Hilt.android
     implementation Hilt.viewModel
     kapt Hilt.compiler

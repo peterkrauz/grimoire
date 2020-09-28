@@ -6,18 +6,33 @@
 
     <fragment
         android:id="@+id/arcsFragment"
-        android:name="com.peterkrauz.grimoire.presentation.home.ArcsFragment" />
+        android:label="ArcsFragment"
+        android:name="com.peterkrauz.grimoire.presentation.home.ArcsFragment">
+
+        <action
+            android:id="@+id/addArc"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:destination="@id/addArcFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addArcFragment"
+        android:label="AddArcsFragment"
+        android:name="com.peterkrauz.grimoire.presentation.home.add.AddArcFragment" />
 
     <fragment
         android:id="@+id/charactersFragment"
+        android:label="CharactersFragment"
         android:name="com.peterkrauz.grimoire.presentation.characters.CharactersFragment" />
 
     <fragment
         android:id="@+id/notesFragment"
+        android:label="NotesFragment"
         android:name="com.peterkrauz.grimoire.presentation.notes.NotesFragment" />
 
     <fragment
         android:id="@+id/tagsFragment"
+        android:label="TagsFragment"
         android:name="com.peterkrauz.grimoire.presentation.tags.TagsFragment" />
 
 </navigation>
