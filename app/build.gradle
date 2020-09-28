@@ -86,6 +86,7 @@ dependencies {
 
     implementation project(ModulePaths.common)
     implementation project(ModulePaths.home)
+    implementation project(ModulePaths.tags)
     implementation project(ModulePaths.notes)
     implementation project(ModulePaths.characters)
 }
