@@ -3,8 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
-    id 'androidx.navigation.safeargs.kotlin'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 
     id 'com.google.gms.google-services'
     id 'com.google.firebase.appdistribution'
@@ -28,7 +28,10 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+                arguments += [
+                        "room.schemaLocation": "$projectDir/schemas".toString(),
+                        "room.incremental": "true"
+                ]
             }
         }
     }
@@ -84,6 +87,10 @@ dependencies {
     kapt Hilt.compiler
     kapt Hilt.androidXCompiler
 
+    kapt Room.compiler
+
+    implementation project(ModulePaths.data)
+    implementation project(ModulePaths.domain)
     implementation project(ModulePaths.common)
     implementation project(ModulePaths.home)
     implementation project(ModulePaths.tags)

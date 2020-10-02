@@ -6,7 +6,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
-apply from: "$rootProject.projectDir/feature-config.gradle"
+apply from: "$rootProject.projectDir/module-config.gradle"
 
 dependencies {
     implementation Kotlin.standardLibrary

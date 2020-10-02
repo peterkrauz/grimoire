@@ -1,0 +1,18 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+apply from: "$rootProject.projectDir/module-config.gradle"
+
+dependencies {
+    implementation Kotlin.standardLibrary
+    implementation JUnit.jUnit
+    implementation JUnit.jUnitExtension
+    implementation Hilt.android
+    kapt Hilt.compiler
+    kapt Hilt.androidXCompiler
+}

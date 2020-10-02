@@ -3,10 +3,19 @@ package com.peterkrauz.grimoire.presentation.home
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
+import com.peterkrauz.grimoire.common.base.BaseViewModel
+import kotlin.coroutines.CoroutineContext
 
 class ArcsViewModel @ViewModelInject constructor(
     @Assisted private val savedStateHandle: SavedStateHandle
-) : ViewModel() {
+) : BaseViewModel<ArcsState>() {
 
+    override var state = ArcsState.IDLE
+        set(value) {
+            field = value
+            _stateLiveData.postValue(value)
+        }
+
+    override fun handleCoroutineError(ctx: CoroutineContext, error: Throwable) {
+    }
 }

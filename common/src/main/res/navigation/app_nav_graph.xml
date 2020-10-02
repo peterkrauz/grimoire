@@ -10,15 +10,15 @@
         android:name="com.peterkrauz.grimoire.presentation.home.ArcsFragment">
 
         <action
-            android:id="@+id/addArc"
-            app:enterAnim="@android:anim/slide_out_right"
-            app:destination="@id/addArcFragment" />
+            android:id="@+id/createArcAction"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:destination="@id/createArcFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/addArcFragment"
-        android:label="AddArcsFragment"
-        android:name="com.peterkrauz.grimoire.presentation.home.add.AddArcFragment" />
+        android:id="@+id/createArcFragment"
+        android:label="CreateArcFragment"
+        android:name="com.peterkrauz.grimoire.presentation.home.create.CreateArcFragment" />
 
     <fragment
         android:id="@+id/charactersFragment"

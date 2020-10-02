@@ -19,10 +19,6 @@ object Android {
     const val lifeCycleCommonJava8 = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}"
 }
 
-object Jetpack {
-
-}
-
 object JUnit {
     private object Versions {
         const val jUnitVersion = "4.12"
@@ -53,7 +49,7 @@ object Firebase {
 }
 
 object Room {
-    private const val version = "2.5.0"
+    private const val version = "2.2.5"
 
     const val ktx = "androidx.room:room-ktx:$version"
     const val runtime = "androidx.room:room-runtime:$version"

@@ -5,4 +5,8 @@
     <string name="characters_empty_state_msg">It seems you haven\'t\ncreated any Character.\n\n\nClick the button below\nto add one!</string>
     <string name="notes_empty_state_msg">It seems you haven\'t\ncreated any Note.\n\n\nClick the button below\nto add one!</string>
     <string name="tags_empty_state_msg">It seems you haven\'t\ncreated any Tag.\n\n\nClick the button below\nto add one!</string>
+
+    <!-- Generic messages   -->
+    <string name="create">Create</string>
+    <string name="generic_error_msg">An error has occurred. Please retry</string>
 </resources>
