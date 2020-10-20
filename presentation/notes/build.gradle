@@ -1,0 +1,22 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+apply from: "$rootProject.projectDir/module-config.gradle"
+
+dependencies {
+    implementation Kotlin.standardLibrary
+    implementation Android.coreKtx
+    implementation Android.constraintLayout
+    implementation Navigation.navigationFragment
+    implementation Hilt.android
+    implementation Hilt.viewModel
+    kapt Hilt.compiler
+    kapt Hilt.androidXCompiler
+
+    implementation project(ModulePaths.common)
+}

@@ -1,6 +1,17 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.appdistribution'
+}
+
+def firebaseBetaGroups = System.getenv("FIREBASE_TESTERS")
+def firebaseBetaTesters = System.getenv("TESTER_GROUP_ALIAS")
 
 android {
     compileSdkVersion AndroidConfig.compileSdkVersion
@@ -12,26 +23,77 @@ android {
         targetSdkVersion AndroidConfig.targetSdkVersion
         versionCode AndroidConfig.versionCode
         versionName AndroidConfig.versionName
-
         testInstrumentationRunner AndroidConfig.testInstrumentationRunner
+        ext.betaDistributionGroupAliases = firebaseBetaGroups
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation": "$projectDir/schemas".toString(),
+                        "room.incremental": "true"
+                ]
+            }
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "app_name", "Grimoire"
+            firebaseAppDistribution {
+                releaseNotesFile = "releasenotes.txt"
+            }
         }
+        beta {
+            initWith debug
+            applicationIdSuffix ".beta"
+            versionNameSuffix "-beta"
+            resValue "string", "app_name", "Grimoire Beta"
+            firebaseAppDistribution {
+                releaseNotesFile = "releasenotes.txt"
+                testers = firebaseBetaTesters
+                groups = firebaseBetaGroups
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = AndroidConfig.javaVersion
+        targetCompatibility = AndroidConfig.javaVersion
+    }
+    kotlinOptions {
+        jvmTarget = AndroidConfig.jvmTarget
     }
 }
 
-dependencies {
-//    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.1'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+kapt {
+    correctErrorTypes true
+}
 
+dependencies {
+    implementation Kotlin.standardLibrary
+    implementation Android.coreKtx
+    implementation Android.appCompat
+    implementation Android.constraintLayout
+    implementation Material.material
+    implementation Navigation.navigationUi
+    implementation Navigation.navigationFragment
+    implementation Firebase.analytics
+    implementation Android.lifeCycleExtensions
+
+    implementation Hilt.android
+    implementation Hilt.viewModel
+    kapt Hilt.compiler
+    kapt Hilt.androidXCompiler
+
+    kapt Room.compiler
+
+    implementation project(ModulePaths.data)
+    implementation project(ModulePaths.domain)
+    implementation project(ModulePaths.common)
+    implementation project(ModulePaths.home)
+    implementation project(ModulePaths.tags)
+    implementation project(ModulePaths.notes)
+    implementation project(ModulePaths.characters)
 }

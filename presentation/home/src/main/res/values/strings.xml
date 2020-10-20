@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_arc">Create Arc</string>
+    <string name="arc_title">Title</string>
+    <string name="arc_title_placeholder">e.g: There and Back Again</string>
+    <string name="arc_description">Description</string>
+    <string name="arc_description_placeholder">e.g: Once upon a time, a gnome and a wizard…</string>
+    <string name="error_invalid_title">Arc needs a title</string>
+    <string name="error_invalid_description">Arc needs a description</string>
+    <string name="arc_created_success">Arc created successfully!</string>
+</resources>

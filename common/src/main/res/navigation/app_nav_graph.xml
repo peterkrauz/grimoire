@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/arcsFragment">
+
+    <fragment
+        android:id="@+id/arcsFragment"
+        android:label="ArcsFragment"
+        android:name="com.peterkrauz.grimoire.presentation.home.ArcsFragment">
+
+        <action
+            android:id="@+id/createArcAction"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:destination="@id/createArcFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createArcFragment"
+        android:label="CreateArcFragment"
+        android:name="com.peterkrauz.grimoire.presentation.home.create.CreateArcFragment" />
+
+    <fragment
+        android:id="@+id/charactersFragment"
+        android:label="CharactersFragment"
+        android:name="com.peterkrauz.grimoire.presentation.characters.CharactersFragment" />
+
+    <fragment
+        android:id="@+id/notesFragment"
+        android:label="NotesFragment"
+        android:name="com.peterkrauz.grimoire.presentation.notes.NotesFragment" />
+
+    <fragment
+        android:id="@+id/tagsFragment"
+        android:label="TagsFragment"
+        android:name="com.peterkrauz.grimoire.presentation.tags.TagsFragment" />
+
+</navigation>

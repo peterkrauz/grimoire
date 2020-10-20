@@ -1,0 +1,45 @@
+<resources>
+
+    <style name="Theme.Grimoire.Launcher">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+
+    <style name="Theme.Grimoire" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="actionBarStyle">@style/Theme.Grimoire.ActionBar</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <item name="toolbarStyle">@style/Style.Grimoire.Toolbar</item>
+    </style>
+
+    <style name="Theme.Grimoire.ActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textAppearance">@style/TextAppearance.Grimoire.H2</item>
+    </style>
+
+    <style name="Style.Grimoire.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetLeft">0dp</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="contentInsetRight">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Grimoire.H2</item>
+    </style>
+
+    <style name="TextAppearance.Grimoire.BottomNavItem.Bold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/kumbh_sans_bold</item>
+    </style>
+
+    <style name="TextAppearance.Grimoire.H2" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/kumbh_sans_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/grey82</item>
+    </style>
+
+    <style name="TextAppearance.Grimoire.ToolbarTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:fontFamily">@font/kumbh_sans_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>

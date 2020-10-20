@@ -1,2 +1,9 @@
+include ':data'
 rootProject.name = "Grimoire"
 include ':app'
+include ':common'
+include ':domain'
+include ':presentation:home'
+include ':presentation:tags'
+include ':presentation:notes'
+include ':presentation:characters'

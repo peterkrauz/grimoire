@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/arcsFragment"
+        android:title="@string/arcs"
+        android:icon="@drawable/ic_arcs_menu" />
+
+    <item
+        android:id="@+id/charactersFragment"
+        android:title="@string/characters"
+        android:icon="@drawable/selector_characters_menu" />
+
+    <item
+        android:id="@+id/notesFragment"
+        android:title="@string/notes"
+        android:icon="@drawable/selector_notes_menu" />
+
+    <item
+        android:id="@+id/tagsFragment"
+        android:title="@string/tags"
+        android:icon="@drawable/selector_tags_menu" />
+
+</menu>
