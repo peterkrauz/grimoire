@@ -12,6 +12,7 @@
         <action
             android:id="@+id/createArcAction"
             app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_in_left"
             app:destination="@id/createArcFragment" />
     </fragment>
 

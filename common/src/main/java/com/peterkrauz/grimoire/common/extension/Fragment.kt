@@ -1,6 +1,9 @@
 package com.peterkrauz.grimoire.common.extension
 
+import android.os.Bundle
+import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.peterkrauz.grimoire.common.snackbar.SnackBarType
 
@@ -15,4 +18,12 @@ fun Fragment.snackBar(
     ).apply {
         view.setBackgroundResource(type.backgroundRes)
     }.show()
+}
+
+fun Fragment.safeNavigate(
+    @IdRes destinationId: Int,
+    @IdRes actionId: Int,
+    args: Bundle? = null
+) {
+    findNavController().safeNavigate(destinationId, actionId, args)
 }

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
+import com.peterkrauz.grimoire.common.extension.safeNavigate
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_arcs.*
 
@@ -21,7 +21,7 @@ class ArcsFragment : Fragment(R.layout.fragment_arcs) {
 
     private fun setupButtons() {
         floatingActionButton.setOnClickListener {
-            findNavController().navigate(R.id.createArcAction)
+            safeNavigate(R.id.arcsFragment, R.id.createArcAction)
         }
     }
 
