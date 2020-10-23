@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ./gradlew build
+      - run: ./gradlew assembleBeta
       - uses: wzieba/Firebase-Distribution-Github-Action@v1.2.2
         with:
           appId: ${{secrets.FIREBASE_APP_ID}}
