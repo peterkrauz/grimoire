@@ -43,12 +43,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/arc_title"
+            android:imeOptions="actionNext"
+            android:nextFocusDown="@id/editTextDescription"
             app:placeholderText="@string/arc_title_placeholder">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:imeOptions="actionNext"
                 android:nextFocusDown="@id/editTextDescription">
 
             </com.google.android.material.textfield.TextInputEditText>
@@ -60,13 +64,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/arc_description"
+            android:imeOptions="actionNext"
+            android:nextFocusDown="@id/buttonCreate"
             android:layout_marginTop="16dp"
             app:placeholderText="@string/arc_description_placeholder">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextDescription"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@id/buttonCreate">
 
             </com.google.android.material.textfield.TextInputEditText>
 
@@ -92,6 +101,6 @@
         android:enabled="false"
         app:layout_anchor="@id/linearLayoutInputs"
         app:layout_anchorGravity="bottom|end"
-        app:icon="@drawable/ic_confirm"/>
+        app:icon="@drawable/ic_add"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

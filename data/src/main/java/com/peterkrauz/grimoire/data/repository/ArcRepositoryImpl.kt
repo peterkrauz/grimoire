@@ -15,4 +15,9 @@ class ArcRepositoryImpl @Inject constructor(private val dao: ArcDao) : ArcReposi
         val arcId = dao.insert(entity)
         return ArcMapper.fromEntity(dao.findById(arcId))
     }
+
+    override suspend fun findAll(): List<Arc> {
+        val entities = dao.findAll()
+        return entities.map(ArcMapper::fromEntity)
+    }
 }

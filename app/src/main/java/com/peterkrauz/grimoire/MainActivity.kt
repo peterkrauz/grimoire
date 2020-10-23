@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val mainViewModel: MainViewModel by viewModels()
+    private val mainViewModel by viewModels<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_Grimoire)

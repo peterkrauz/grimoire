@@ -1,6 +1,6 @@
 package com.peterkrauz.grimoire.domain.entity
 
-class Arc(
+data class Arc(
     val id: Long,
     val title: String,
     val description: String
