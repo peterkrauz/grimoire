@@ -42,10 +42,12 @@ object Navigation {
 
 object Firebase {
     private object Versions {
-        const val analytics = "17.5.0"
+        const val analytics = "17.6.0"
+        const val crashlytics = "17.2.2"
     }
 
     const val analytics = "com.google.firebase:firebase-analytics:${Versions.analytics}"
+    const val crashlytics = "com.google.firebase:firebase-crashlytics:${Versions.crashlytics}"
 }
 
 object Room {

@@ -22,7 +22,7 @@ jobs:
         run: gradle wrapper
 
       - name: Assemble Beta APK
-        run: ./gradlew assembleBeta
+        run: bash ./gradlew assembleBeta --stacktrace
 
       - name: Distribute to Firebase
         uses: wzieba/Firebase-Distribution-Github-Action@v1.2.2

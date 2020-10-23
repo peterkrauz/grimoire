@@ -6,6 +6,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
 
+    id 'com.google.firebase.crashlytics'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.appdistribution'
 }
@@ -80,6 +81,7 @@ dependencies {
     implementation Navigation.navigationUi
     implementation Navigation.navigationFragment
     implementation Firebase.analytics
+    implementation Firebase.crashlytics
     implementation Android.lifeCycleExtensions
 
     implementation Hilt.android
