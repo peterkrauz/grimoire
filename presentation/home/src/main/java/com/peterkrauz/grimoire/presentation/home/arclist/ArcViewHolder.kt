@@ -1,4 +1,4 @@
-package com.peterkrauz.grimoire.presentation.home
+package com.peterkrauz.grimoire.presentation.home.arclist
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView.ViewHolder

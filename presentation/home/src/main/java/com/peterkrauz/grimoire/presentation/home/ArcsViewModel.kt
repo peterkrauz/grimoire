@@ -23,14 +23,24 @@ class ArcsViewModel @ViewModelInject constructor(
         }
 
     val errorLiveEvent = SingleLiveEvent<Unit>()
+    val arcDeletedLiveEvent = SingleLiveEvent<Unit>()
 
     private val _arcsLiveData = MutableLiveData<List<Arc>>()
     val arcsLiveData: LiveData<List<Arc>>
         get() = _arcsLiveData
 
-    fun fetchArcs() {
+    fun loadArcs() {
         perform(ArcsState.LOADING, ArcsState.IDLE) {
             _arcsLiveData.postValue(arcRepository.findAll())
+        }
+    }
+
+    fun onSwiped(arc: Arc) {
+        perform(ArcsState.LOADING, ArcsState.IDLE) {
+            arcRepository.deleteById(arc.id)
+            arcDeletedLiveEvent.call()
+        }.also {
+            loadArcs()
         }
     }
 

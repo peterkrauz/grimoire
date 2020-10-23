@@ -8,4 +8,5 @@
     <string name="error_invalid_title">Arc needs a title</string>
     <string name="error_invalid_description">Arc needs a description</string>
     <string name="arc_created_success">Arc created successfully!</string>
+    <string name="arc_delete_success">Arc deleted with success!</string>
 </resources>

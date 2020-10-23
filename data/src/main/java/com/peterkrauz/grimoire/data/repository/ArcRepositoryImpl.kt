@@ -20,4 +20,13 @@ class ArcRepositoryImpl @Inject constructor(private val dao: ArcDao) : ArcReposi
         val entities = dao.findAll()
         return entities.map(ArcMapper::fromEntity)
     }
+
+    override suspend fun findById(arcId: Long): Arc {
+        val entity = dao.findById(arcId)
+        return ArcMapper.fromEntity(entity)
+    }
+
+    override suspend fun deleteById(arcId: Long) {
+        dao.deleteById(arcId)
+    }
 }

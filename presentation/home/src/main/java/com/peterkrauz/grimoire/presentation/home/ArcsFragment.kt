@@ -6,11 +6,14 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.peterkrauz.grimoire.common.extension.safeNavigate
 import com.peterkrauz.grimoire.common.extension.snackBar
 import com.peterkrauz.grimoire.common.snackbar.SnackBarType
 import com.peterkrauz.grimoire.domain.entity.Arc
+import com.peterkrauz.grimoire.presentation.home.arclist.ArcSwipeCallback
+import com.peterkrauz.grimoire.presentation.home.arclist.ArcsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_arcs.*
 
@@ -30,7 +33,7 @@ class ArcsFragment : Fragment(R.layout.fragment_arcs) {
 
     override fun onResume() {
         super.onResume()
-        viewModel.fetchArcs()
+        viewModel.loadArcs()
     }
 
     private fun setupButtons() {
@@ -44,6 +47,10 @@ class ArcsFragment : Fragment(R.layout.fragment_arcs) {
             setHasFixedSize(true)
             adapter = arcsAdapter
             layoutManager = LinearLayoutManager(requireContext())
+        }.also { recyclerView ->
+            ItemTouchHelper(
+                ArcSwipeCallback(::onSwiped)
+            ).attachToRecyclerView(recyclerView)
         }
     }
 
@@ -51,6 +58,7 @@ class ArcsFragment : Fragment(R.layout.fragment_arcs) {
         viewModel.arcsLiveData.observe(viewLifecycleOwner, ::setArcs)
         viewModel.stateLiveData.observe(viewLifecycleOwner, ::setState)
         viewModel.errorLiveEvent.observe(viewLifecycleOwner) { setError() }
+        viewModel.arcDeletedLiveEvent.observe(viewLifecycleOwner) { onArcDeleted() }
     }
 
     private fun setArcs(arcs: List<Arc>) {
@@ -64,4 +72,11 @@ class ArcsFragment : Fragment(R.layout.fragment_arcs) {
     }
 
     private fun setError() = snackBar(R.string.generic_error_msg, SnackBarType.ERROR)
+
+    private fun onArcDeleted() = snackBar(R.string.arc_delete_success)
+
+    private fun onSwiped(position: Int) {
+        val arc = arcsAdapter.getItemAt(position)
+        viewModel.onSwiped(arc)
+    }
 }

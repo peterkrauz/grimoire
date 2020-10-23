@@ -17,4 +17,7 @@ interface ArcDao {
 
     @Query("SELECT * FROM arc WHERE id = :arcId")
     suspend fun findById(arcId: Long): ArcEntity
+
+    @Query("DELETE FROM arc WHERE id = :arcId")
+    suspend fun deleteById(arcId: Long)
 }
