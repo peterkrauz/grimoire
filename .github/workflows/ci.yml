@@ -1,0 +1,18 @@
+name: CI
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy-to-firebase:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ./gradlew build
+      - uses: wzieba/Firebase-Distribution-Github-Action@v1.2.2
+        with:
+          appId: ${{secrets.FIREBASE_APP_ID}}
+          token: ${{secrets.FIREBASE_TOKEN}}
+          groups: ${{secrets.FIREBASE_TESTER_GROUP}}
+          file: app/build/outputs/apk/beta/app-beta.apk
