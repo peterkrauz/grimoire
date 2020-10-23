@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Clone Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
 
       - name: Setup JDK 1.8
         uses: actions/setup-java@v1
@@ -25,7 +25,7 @@ jobs:
         run: bash ./gradlew assembleBeta --stacktrace
 
       - name: Distribute to Firebase
-        uses: wzieba/Firebase-Distribution-Github-Action@v1.2.2
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
           appId: ${{secrets.FIREBASE_APP_ID}}
           token: ${{secrets.FIREBASE_TOKEN}}
