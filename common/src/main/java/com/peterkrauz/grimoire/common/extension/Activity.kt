@@ -13,7 +13,7 @@ fun AppCompatActivity.snackBar(
     Snackbar.make(
         hostView,
         message,
-        Snackbar.LENGTH_LONG
+        Snackbar.LENGTH_SHORT
     ).apply {
         view.setBackgroundResource(type.backgroundRes)
     }.show()
