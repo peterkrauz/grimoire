@@ -24,24 +24,30 @@ class ArcsViewModel @ViewModelInject constructor(
 
     val errorLiveEvent = SingleLiveEvent<Unit>()
     val arcDeletedLiveEvent = SingleLiveEvent<Unit>()
+    val arcClickedLiveEvent = SingleLiveEvent<Arc>()
 
     private val _arcsLiveData = MutableLiveData<List<Arc>>()
     val arcsLiveData: LiveData<List<Arc>>
         get() = _arcsLiveData
 
+    fun onArcClick(arc: Arc) {
+        arcClickedLiveEvent.value = arc
+    }
+
     fun loadArcs() {
-        perform(ArcsState.LOADING, ArcsState.IDLE) {
-            _arcsLiveData.postValue(arcRepository.findAll())
-        }
+        perform(ArcsState.LOADING, ArcsState.IDLE) { fetchArcs() }
     }
 
     fun onSwiped(arc: Arc) {
         perform(ArcsState.LOADING, ArcsState.IDLE) {
             arcRepository.deleteById(arc.id)
             arcDeletedLiveEvent.call()
-        }.also {
-            loadArcs()
+            fetchArcs()
         }
+    }
+
+    private suspend fun fetchArcs() {
+        _arcsLiveData.postValue(arcRepository.findAll())
     }
 
     override fun handleCoroutineError(ctx: CoroutineContext, error: Throwable) {

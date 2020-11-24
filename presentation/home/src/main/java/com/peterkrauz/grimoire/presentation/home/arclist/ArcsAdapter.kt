@@ -7,14 +7,14 @@ import com.peterkrauz.grimoire.common.extension.inflate
 import com.peterkrauz.grimoire.domain.entity.Arc
 import com.peterkrauz.grimoire.presentation.home.R
 
-class ArcsAdapter : ListAdapter<Arc, ArcViewHolder>(ArcDiffCallback) {
+class ArcsAdapter(private val onArcClick: (Arc) -> Unit) : ListAdapter<Arc, ArcViewHolder>(ArcDiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArcViewHolder {
         return ArcViewHolder(parent.inflate(R.layout.item_arc))
     }
 
     override fun onBindViewHolder(holder: ArcViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), onArcClick)
     }
 
     fun getItemAt(position: Int): Arc = getItem(position)

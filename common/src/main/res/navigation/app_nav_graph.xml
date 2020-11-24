@@ -14,12 +14,30 @@
             app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_in_left"
             app:destination="@id/createArcFragment" />
+
+        <action
+            android:id="@+id/toArcDetailsAction"
+            app:destination="@id/arcDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/arcDetailFragment"
+        android:label="ArcDetailFragment"
+        android:name="com.peterkrauz.grimoire.presentation.home.arcdetail.ArcDetailFragment">
+
+        <argument
+            android:name="arcId"
+            app:argType="long" />
+
+        <argument
+            android:name="arcTransitionName"
+            app:argType="string" />
     </fragment>
 
     <fragment
         android:id="@+id/createArcFragment"
         android:label="CreateArcFragment"
-        android:name="com.peterkrauz.grimoire.presentation.home.create.CreateArcFragment" />
+        android:name="com.peterkrauz.grimoire.presentation.home.createarc.CreateArcFragment" />
 
     <fragment
         android:id="@+id/charactersFragment"
