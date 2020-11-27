@@ -12,8 +12,8 @@ import com.peterkrauz.grimoire.domain.entity.ArcRepository
 import kotlin.coroutines.CoroutineContext
 
 class ArcsViewModel @ViewModelInject constructor(
-    @Assisted private val savedStateHandle: SavedStateHandle,
-    private val arcRepository: ArcRepository
+    private val arcRepository: ArcRepository,
+    @Assisted private val savedStateHandle: SavedStateHandle
 ) : BaseViewModel<ArcsState>() {
 
     override var state = ArcsState.IDLE
@@ -22,7 +22,6 @@ class ArcsViewModel @ViewModelInject constructor(
             _stateLiveData.postValue(value)
         }
 
-    val errorLiveEvent = SingleLiveEvent<Unit>()
     val arcDeletedLiveEvent = SingleLiveEvent<Unit>()
     val arcClickedLiveEvent = SingleLiveEvent<Arc>()
 

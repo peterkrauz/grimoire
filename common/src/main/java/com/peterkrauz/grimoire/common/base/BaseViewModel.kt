@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.peterkrauz.grimoire.common.presentation.SingleLiveEvent
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
@@ -16,6 +17,7 @@ abstract class BaseViewModel<S> : ViewModel() {
     val stateLiveData: LiveData<S>
         get() = _stateLiveData
 
+    val errorLiveEvent = SingleLiveEvent<Unit>()
     private val errorHandler by lazy { CoroutineExceptionHandler(::handleCoroutineError) }
 
     abstract fun handleCoroutineError(ctx: CoroutineContext, error: Throwable)

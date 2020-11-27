@@ -79,7 +79,7 @@ class ArcsFragment : Fragment(R.layout.fragment_arcs) {
 
     private fun onArcClicked(arc: Arc) {
         val arcTransitionName = "arc_${arc.id}"
-        val args = ArcDetailFragmentArgs.Builder(arc.id, arcTransitionName).build()
+        val args = ArcDetailFragmentArgs.Builder(arc.id).build()
         val extras = FragmentNavigatorExtras(cardViewArc to arcTransitionName)
         safeNavigate(R.id.arcsFragment, R.id.toArcDetailsAction, args.toBundle(), extras = extras)
     }

@@ -28,10 +28,6 @@
         <argument
             android:name="arcId"
             app:argType="long" />
-
-        <argument
-            android:name="arcTransitionName"
-            app:argType="string" />
     </fragment>
 
     <fragment
