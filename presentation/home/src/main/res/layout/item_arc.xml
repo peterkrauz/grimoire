@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:focusable="true"
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,40 +21,40 @@
             android:id="@+id/textViewArcName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/kumbh_sans_bold"
-            android:textSize="21sp"
-            android:maxLines="1"
             android:layout_marginTop="8dp"
-            tools:text="There and back again"
-            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/kumbh_sans_bold"
+            android:maxLines="1"
+            android:textSize="21sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="There and back again" />
 
         <TextView
             android:id="@+id/textViewArcDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/kumbh_sans_regular"
-            android:textSize="16sp"
-            android:maxLines="3"
-            android:ellipsize="middle"
             android:layout_marginTop="4dp"
-            tools:text="Once upon a time..."
-            app:layout_constraintTop_toBottomOf="@id/textViewArcName"
+            android:ellipsize="middle"
+            android:fontFamily="@font/kumbh_sans_regular"
+            android:maxLines="3"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/textViewArcName"
+            tools:text="Once upon a time..." />
 
         <Button
-            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:id="@+id/buttonReadMore"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/read_more"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="4dp"
-            app:layout_constraintTop_toBottomOf="@id/textViewArcDescription"
+            android:text="@string/read_more"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewArcDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

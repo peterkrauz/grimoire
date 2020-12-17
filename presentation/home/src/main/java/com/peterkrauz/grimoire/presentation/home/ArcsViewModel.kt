@@ -7,8 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import com.peterkrauz.grimoire.common.base.BaseViewModel
 import com.peterkrauz.grimoire.common.presentation.SingleLiveEvent
-import com.peterkrauz.grimoire.domain.entity.Arc
-import com.peterkrauz.grimoire.domain.entity.ArcRepository
+import com.peterkrauz.grimoire.domain.entity.arc.Arc
+import com.peterkrauz.grimoire.domain.entity.arc.ArcRepository
 import kotlin.coroutines.CoroutineContext
 
 class ArcsViewModel @ViewModelInject constructor(

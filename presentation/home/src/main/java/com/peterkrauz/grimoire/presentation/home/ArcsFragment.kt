@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.peterkrauz.grimoire.common.extension.safeNavigate
 import com.peterkrauz.grimoire.common.extension.snackBar
 import com.peterkrauz.grimoire.common.snackbar.SnackBarType
-import com.peterkrauz.grimoire.domain.entity.Arc
+import com.peterkrauz.grimoire.domain.entity.arc.Arc
 import com.peterkrauz.grimoire.presentation.home.arcdetail.ArcDetailFragmentArgs
 import com.peterkrauz.grimoire.presentation.home.arclist.ArcSwipeCallback
 import com.peterkrauz.grimoire.presentation.home.arclist.ArcsAdapter

@@ -5,10 +5,13 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.transition.MaterialContainerTransform
-import com.peterkrauz.grimoire.domain.entity.Arc
+import com.peterkrauz.grimoire.domain.entity.arc.Arc
 import com.peterkrauz.grimoire.presentation.home.R
+import com.peterkrauz.grimoire.presentation.home.eventlist.EventsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_arc_detail.*
 
@@ -20,6 +23,8 @@ class ArcDetailFragment : Fragment(R.layout.fragment_arc_detail) {
     private val arcId get() = args.arcId
 
     private val viewModel by viewModels<ArcDetailViewModel>()
+
+    private val eventsAdapter by lazy { EventsAdapter(viewModel::onEventClick) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         configureSharedElementReturnTransition()
@@ -42,6 +47,9 @@ class ArcDetailFragment : Fragment(R.layout.fragment_arc_detail) {
 
     private fun setupView() {
         constraintLayoutArcDetail.transitionName = "arc_$arcId"
+        toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
+        recyclerViewEvents.adapter = eventsAdapter
+        recyclerViewEvents.layoutManager = LinearLayoutManager(requireContext())
     }
 
     private fun observeViewModel() {
@@ -50,5 +58,6 @@ class ArcDetailFragment : Fragment(R.layout.fragment_arc_detail) {
 
     private fun setArc(arc: Arc) {
         collapsingToolbar.title = arc.title
+        eventsAdapter.addArcDescription(arc.description)
     }
 }

@@ -5,13 +5,11 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.peterkrauz.grimoire.common.base.BaseViewModel
-import com.peterkrauz.grimoire.domain.entity.Arc
-import com.peterkrauz.grimoire.domain.entity.ArcRepository
+import com.peterkrauz.grimoire.domain.entity.arc.Arc
+import com.peterkrauz.grimoire.domain.entity.arc.ArcRepository
+import com.peterkrauz.grimoire.domain.entity.event.Event
 import com.peterkrauz.grimoire.presentation.home.errors.ArcNotFoundException
-import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
 class ArcDetailViewModel @ViewModelInject constructor(
@@ -34,6 +32,9 @@ class ArcDetailViewModel @ViewModelInject constructor(
             val arcId = savedStateHandle.get<Long>("arcId") ?: throw ArcNotFoundException
             _arcLiveData.postValue(arcRepository.findById(arcId))
         }
+    }
+
+    fun onEventClick(event: Event) {
     }
 
     override fun handleCoroutineError(ctx: CoroutineContext, error: Throwable) {

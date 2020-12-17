@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Gruhm Waar</string>
+    <string name="app_name">Grimoire</string>
     <!-- Empty state messages  -->
     <string name="arcs_empty_state_msg">It seems you haven\'t\ncreated any Arc.\n\n\nClick the button below\nto add one!</string>
     <string name="characters_empty_state_msg">It seems you haven\'t\ncreated any Character.\n\n\nClick the button below\nto add one!</string>

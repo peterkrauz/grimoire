@@ -51,7 +51,7 @@
                 android:id="@+id/editTextTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
+                android:singleLine="true"
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@id/editTextDescription">
 
@@ -73,7 +73,7 @@
                 android:id="@+id/editTextDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="3"
+                android:maxLines="6"
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@id/buttonCreate">
 
