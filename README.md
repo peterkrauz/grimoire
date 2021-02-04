@@ -18,13 +18,16 @@ was dismembered into multiple modules.
 
 > ### Module Dependencies
 ![dependencies](diagrams/module_dependencies.png)
-I chose to have a separation by layer here. In doing so, `:domain` module will contain all UseCase classes of our app, no matter which presentation module it serves. Same goes for the `:data` module.
+
+I chose to have a separation by layer here. In doing so, `:domain` module will contain all UseCase classes of our app, no matter which presentation module it serves. Same goes for the `:data` module. <br>
 The only difference arises on the `:presentation` module, where each screen (and it's Fragments/States) were put into separate folders.<br>
+Our `:app` module dependes on everything else in order to take the role of provider of every other module's dependencies
 
 > ### Layers
 ![layers](diagrams/architecture_layers.png)
+
 Using this layout, our Domain layer (which encompasses both Application + Enterprise business rules) is completely unaware of any other module - as intended. The Data layer needs only to depend on the Domain to provide concrete implementations of the Domain's components (Repository, Entity, etc). <br>
-The Presentation layer depends on both of the aforementioned layers, since it is the third layer of our architecture, and thus our state-handling Presenters must be able to dispatch and call for state-changing Interactors.
+The Presentation layer depends on both of the aforementioned layers, since it is the third layer of our architecture, and thus our state-handling Presenters must be able to dispatch and call for state-changing Interactors. <br>
 Finally, we have an "extra" layer - the App - that knows of everything else. There we have our app's entry-point, as well as the configuration and components of the chosen [Dependency Injection](https://java-design-patterns.com/patterns/dependency-injection/) library.
 
 
