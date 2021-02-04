@@ -19,7 +19,8 @@ was dismembered into multiple modules.
 > ### Module Dependencies
 ![dependencies](diagrams/module_dependencies.png)
 
-I chose to have a separation by layer here. In doing so, `:domain` module will contain all UseCase classes of our app, no matter which presentation module it serves. Same goes for the `:data` module. <br>
+I chose to have a separation by layer here. In doing so, `:domain` module will contain all UseCase classes of our app, no matter which presentation module it serves.<br>
+Same goes for the `:data` module, which will contain all Dao, Repository Implementation and Room-related classes <br>
 The only difference arises on the `:presentation` module, where each screen (and it's Fragments/States) were put into separate folders.<br>
 Our `:app` module dependes on everything else in order to take the role of provider of every other module's dependencies
 
