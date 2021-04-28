@@ -6,6 +6,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
 
+    id 'com.google.firebase.crashlytics'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.appdistribution'
 }
@@ -22,7 +23,7 @@ android {
         minSdkVersion AndroidConfig.minSdkVersion
         targetSdkVersion AndroidConfig.targetSdkVersion
         versionCode AndroidConfig.versionCode
-        versionName AndroidConfig.versionName
+        versionName "${AndroidConfig.majorVersion}.${AndroidConfig.mediumVersion}.${generateVersionCode()}"
         testInstrumentationRunner AndroidConfig.testInstrumentationRunner
         ext.betaDistributionGroupAliases = firebaseBetaGroups
 
@@ -80,6 +81,7 @@ dependencies {
     implementation Navigation.navigationUi
     implementation Navigation.navigationFragment
     implementation Firebase.analytics
+    implementation Firebase.crashlytics
     implementation Android.lifeCycleExtensions
 
     implementation Hilt.android
@@ -96,4 +98,11 @@ dependencies {
     implementation project(ModulePaths.tags)
     implementation project(ModulePaths.notes)
     implementation project(ModulePaths.characters)
+}
+
+static def generateVersionCode() {
+    def result = "git rev-list HEAD --count".execute().text.trim()
+    if(result.empty) result = "PowerShell -Command git rev-list HEAD --count".execute().text.trim()
+    if(result.empty) throw new RuntimeException("Could not generate versioncode on this platform: cmd output: ${result.text}")
+    return result.toInteger()
 }

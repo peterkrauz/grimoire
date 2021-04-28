@@ -1,4 +1,4 @@
-package com.peterkrauz.grimoire.domain.entity
+package com.peterkrauz.grimoire.domain.entity.arc
 
 data class CreateArcForm(
     val title: String,

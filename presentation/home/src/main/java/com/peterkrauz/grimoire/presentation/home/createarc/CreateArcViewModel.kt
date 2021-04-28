@@ -1,10 +1,9 @@
-package com.peterkrauz.grimoire.presentation.home.create
+package com.peterkrauz.grimoire.presentation.home.createarc
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.SavedStateHandle
 import com.peterkrauz.grimoire.common.base.BaseViewModel
-import com.peterkrauz.grimoire.common.presentation.SingleLiveEvent
 import com.peterkrauz.grimoire.domain.usecase.CreateArcUseCase
 import kotlin.coroutines.CoroutineContext
 
@@ -30,8 +29,6 @@ class CreateArcViewModel @ViewModelInject constructor(
             field = value
             refreshState()
         }
-
-    val errorLiveEvent = SingleLiveEvent<Unit>()
 
     fun onTitleChanged(title: String?) {
         this.title = title

@@ -2,8 +2,8 @@ package com.peterkrauz.grimoire.data.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.peterkrauz.grimoire.domain.entity.Arc
-import com.peterkrauz.grimoire.domain.entity.CreateArcForm
+import com.peterkrauz.grimoire.domain.entity.arc.Arc
+import com.peterkrauz.grimoire.domain.entity.arc.CreateArcForm
 
 @Entity(tableName = "arc")
 data class ArcEntity(

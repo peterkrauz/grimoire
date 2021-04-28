@@ -1,4 +1,4 @@
-package com.peterkrauz.grimoire.presentation.home.create
+package com.peterkrauz.grimoire.presentation.home.createarc
 
 sealed class CreateArcException : Exception()
 

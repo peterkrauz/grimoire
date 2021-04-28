@@ -12,6 +12,12 @@ interface ArcDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(arc: ArcEntity): Long
 
+    @Query("SELECT * FROM arc")
+    suspend fun findAll(): List<ArcEntity>
+
     @Query("SELECT * FROM arc WHERE id = :arcId")
     suspend fun findById(arcId: Long): ArcEntity
+
+    @Query("DELETE FROM arc WHERE id = :arcId")
+    suspend fun deleteById(arcId: Long)
 }

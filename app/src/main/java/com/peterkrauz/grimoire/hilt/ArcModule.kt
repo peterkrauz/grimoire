@@ -3,7 +3,7 @@ package com.peterkrauz.grimoire.hilt
 import com.peterkrauz.grimoire.data.dao.ArcDao
 import com.peterkrauz.grimoire.data.repository.ArcRepositoryImpl
 import com.peterkrauz.grimoire.data.db.GrimoireDatabase
-import com.peterkrauz.grimoire.domain.entity.ArcRepository
+import com.peterkrauz.grimoire.domain.entity.arc.ArcRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

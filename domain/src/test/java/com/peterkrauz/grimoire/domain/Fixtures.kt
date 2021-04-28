@@ -1,6 +1,6 @@
 package com.peterkrauz.grimoire.domain
 
-import com.peterkrauz.grimoire.domain.entity.Arc
+import com.peterkrauz.grimoire.domain.entity.arc.Arc
 
 object Fixtures {
 

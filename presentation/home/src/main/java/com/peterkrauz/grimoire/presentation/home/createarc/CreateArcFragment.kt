@@ -1,4 +1,4 @@
-package com.peterkrauz.grimoire.presentation.home.create
+package com.peterkrauz.grimoire.presentation.home.createarc
 
 import android.os.Bundle
 import android.view.View
@@ -18,8 +18,8 @@ import kotlinx.android.synthetic.main.fragment_create_arc.*
 @AndroidEntryPoint
 class CreateArcFragment : Fragment(R.layout.fragment_create_arc) {
 
-    private val viewModel: CreateArcViewModel by viewModels()
-    private val mainViewModel: MainViewModel by viewModels(::requireActivity)
+    private val viewModel by viewModels<CreateArcViewModel>()
+    private val mainViewModel by viewModels<MainViewModel>(::requireActivity)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

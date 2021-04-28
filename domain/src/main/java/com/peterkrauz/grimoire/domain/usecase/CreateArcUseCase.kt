@@ -1,8 +1,8 @@
 package com.peterkrauz.grimoire.domain.usecase
 
-import com.peterkrauz.grimoire.domain.entity.Arc
-import com.peterkrauz.grimoire.domain.entity.ArcRepository
-import com.peterkrauz.grimoire.domain.entity.CreateArcForm
+import com.peterkrauz.grimoire.domain.entity.arc.Arc
+import com.peterkrauz.grimoire.domain.entity.arc.ArcRepository
+import com.peterkrauz.grimoire.domain.entity.arc.CreateArcForm
 import javax.inject.Inject
 
 class CreateArcUseCase @Inject constructor(private val repository: ArcRepository) {
